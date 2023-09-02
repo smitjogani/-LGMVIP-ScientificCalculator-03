@@ -1,0 +1,286 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JRadioButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Calculator {
+
+	private JFrame frmScientificCalculator;
+	private JTextField textField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Calculator window = new Calculator();
+					window.frmScientificCalculator.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Calculator() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmScientificCalculator = new JFrame();
+		frmScientificCalculator.getContentPane().setFont(new Font("Dialog", Font.PLAIN, 15));
+		frmScientificCalculator.setTitle("Scientific Calculator");
+		frmScientificCalculator.setBounds(100, 100, 413, 554);
+		frmScientificCalculator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmScientificCalculator.getContentPane().setLayout(null);
+		
+		textField = new JTextField();
+		textField.setBounds(10, 11, 376, 62);
+		frmScientificCalculator.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JButton btnNewButton = new JButton("R");
+		btnNewButton.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnNewButton.setBounds(10, 109, 82, 50);
+		frmScientificCalculator.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("1/x");
+		btnNewButton_1.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnNewButton_1.setBounds(10, 170, 82, 52);
+		frmScientificCalculator.getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("x^y");
+		btnNewButton_2.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnNewButton_2.setBounds(10, 225, 128, 52);
+		frmScientificCalculator.getContentPane().add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("x^3");
+		btnNewButton_3.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnNewButton_3.setBounds(11, 281, 129, 52);
+		frmScientificCalculator.getContentPane().add(btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("x^2");
+		btnNewButton_4.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnNewButton_4.setBounds(11, 337, 129, 52);
+		frmScientificCalculator.getContentPane().add(btnNewButton_4);
+		
+		JButton btnNewButton_5 = new JButton("n!");
+		btnNewButton_5.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnNewButton_5.setBounds(11, 394, 129, 52);
+		frmScientificCalculator.getContentPane().add(btnNewButton_5);
+		
+		JButton btnPlusMinus = new JButton("+/-");
+		btnPlusMinus.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnPlusMinus.setBounds(11, 449, 129, 52);
+		frmScientificCalculator.getContentPane().add(btnPlusMinus);
+		
+		JButton btnNewButton_7 = new JButton("e^x");
+		btnNewButton_7.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnNewButton_7.setBounds(97, 109, 62, 52);
+		frmScientificCalculator.getContentPane().add(btnNewButton_7);
+		
+		JButton btnNewButton_1_1 = new JButton("Log");
+		btnNewButton_1_1.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnNewButton_1_1.setBounds(97, 170, 61, 52);
+		frmScientificCalculator.getContentPane().add(btnNewButton_1_1);
+		
+		JButton btnPercent = new JButton("%");
+		btnPercent.setFont(new Font("Dialog", Font.PLAIN, 17));
+		btnPercent.setBounds(150, 223, 51, 52);
+		frmScientificCalculator.getContentPane().add(btnPercent);
+		
+		JButton btn7 = new JButton("7");
+		btn7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number = textField.getText()+btn7.getText();
+				textField.setText(number);
+			}
+		});
+		btn7.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btn7.setBounds(150, 278, 51, 52);
+		frmScientificCalculator.getContentPane().add(btn7);
+		
+		JButton btn4 = new JButton("4");
+		btn4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number = textField.getText()+btn4.getText();
+				textField.setText(number);
+			}
+		});
+		btn4.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btn4.setBounds(150, 334, 51, 52);
+		frmScientificCalculator.getContentPane().add(btn4);
+		
+		JButton btn1 = new JButton("1");
+		btn1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number = textField.getText()+btn1.getText();
+				textField.setText(number);
+			}
+		});
+		btn1.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btn1.setBounds(150, 391, 51, 52);
+		frmScientificCalculator.getContentPane().add(btn1);
+		
+		JButton btnNewButton_8 = new JButton("Sin");
+		btnNewButton_8.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnNewButton_8.setBounds(162, 109, 62, 52);
+		frmScientificCalculator.getContentPane().add(btnNewButton_8);
+		
+		JButton btnNewButton_1_2 = new JButton("Sinh");
+		btnNewButton_1_2.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnNewButton_1_2.setBounds(162, 170, 62, 52);
+		frmScientificCalculator.getContentPane().add(btnNewButton_1_2);
+		
+		JButton btnClear = new JButton("C");
+		btnClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textField.setText(null);
+			}
+		});
+		btnClear.setFont(new Font("Dialog", Font.PLAIN, 20));
+		btnClear.setBounds(211, 223, 51, 52);
+		frmScientificCalculator.getContentPane().add(btnClear);
+		
+		JButton btn8 = new JButton("8");
+		btn8.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btn8.setBounds(211, 278, 51, 52);
+		frmScientificCalculator.getContentPane().add(btn8);
+		
+		JButton btn5 = new JButton("5");
+		btn5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number = textField.getText()+btn5.getText();
+				textField.setText(number);
+			}
+		});
+		btn5.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btn5.setBounds(211, 334, 51, 52);
+		frmScientificCalculator.getContentPane().add(btn5);
+		
+		JButton btn2 = new JButton("2");
+		btn2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number = textField.getText()+btn2.getText();
+				textField.setText(number);
+			}
+		});
+		btn2.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btn2.setBounds(211, 391, 51, 52);
+		frmScientificCalculator.getContentPane().add(btn2);
+		
+		JButton brtn0 = new JButton("0");
+		brtn0.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number = textField.getText()+btn0.getText();
+				textField.setText(number);
+			}
+		});
+		brtn0.setFont(new Font("Tahoma", Font.BOLD, 18));
+		brtn0.setBounds(150, 446, 112, 52);
+		frmScientificCalculator.getContentPane().add(brtn0);
+		
+		JButton btnNewButton_9 = new JButton("Cos");
+		btnNewButton_9.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnNewButton_9.setBounds(225, 109, 69, 52);
+		frmScientificCalculator.getContentPane().add(btnNewButton_9);
+		
+		JButton btnNewButton_1_3 = new JButton("Cosh");
+		btnNewButton_1_3.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnNewButton_1_3.setBounds(225, 170, 69, 52);
+		frmScientificCalculator.getContentPane().add(btnNewButton_1_3);
+		
+		JButton btnBackSpace = new JButton("B");
+		btnBackSpace.setFont(new Font("Dialog", Font.PLAIN, 20));
+		btnBackSpace.setBounds(272, 223, 51, 52);
+		frmScientificCalculator.getContentPane().add(btnBackSpace);
+		
+		JButton btn9 = new JButton("9");
+		btn9.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btn9.setBounds(272, 278, 51, 52);
+		frmScientificCalculator.getContentPane().add(btn9);
+		
+		JButton btn6 = new JButton("6");
+		btn6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number = textField.getText()+btn6.getText();
+				textField.setText(number);
+			}
+		});
+		btn6.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btn6.setBounds(272, 334, 51, 52);
+		frmScientificCalculator.getContentPane().add(btn6);
+		
+		JButton btn3 = new JButton("3");
+		btn3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number = textField.getText()+btn3.getText();
+				textField.setText(number);
+			}
+		});
+		btn3.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btn3.setBounds(272, 391, 51, 52);
+		frmScientificCalculator.getContentPane().add(btn3);
+		
+		JButton btnDot = new JButton(".");
+		btnDot.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btnDot.setBounds(272, 446, 51, 52);
+		frmScientificCalculator.getContentPane().add(btnDot);
+		
+		JButton btnNewButton_10 = new JButton("Tan");
+		btnNewButton_10.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnNewButton_10.setBounds(297, 109, 89, 52);
+		frmScientificCalculator.getContentPane().add(btnNewButton_10);
+		
+		JButton btnNewButton_1_4 = new JButton("Tanh");
+		btnNewButton_1_4.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnNewButton_1_4.setBounds(297, 170, 89, 52);
+		frmScientificCalculator.getContentPane().add(btnNewButton_1_4);
+		
+		JButton btnAdd = new JButton("+");
+		btnAdd.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnAdd.setBounds(333, 223, 51, 52);
+		frmScientificCalculator.getContentPane().add(btnAdd);
+		
+		JButton btnSub = new JButton("-");
+		btnSub.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnSub.setBounds(333, 277, 51, 52);
+		frmScientificCalculator.getContentPane().add(btnSub);
+		
+		JButton btnMul = new JButton("*");
+		btnMul.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnMul.setBounds(333, 333, 51, 52);
+		frmScientificCalculator.getContentPane().add(btnMul);
+		
+		JButton btnDevide = new JButton("/");
+		btnDevide.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnDevide.setBounds(333, 390, 51, 52);
+		frmScientificCalculator.getContentPane().add(btnDevide);
+		
+		JButton btnEqual = new JButton("=");
+		btnEqual.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnEqual.setBounds(333, 445, 51, 52);
+		frmScientificCalculator.getContentPane().add(btnEqual);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("ON");
+		rdbtnNewRadioButton.setBounds(14, 80, 62, 23);
+		frmScientificCalculator.getContentPane().add(rdbtnNewRadioButton);
+		
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("OFF");
+		rdbtnNewRadioButton_1.setBounds(72, 80, 51, 23);
+		frmScientificCalculator.getContentPane().add(rdbtnNewRadioButton_1);
+	}
+}
